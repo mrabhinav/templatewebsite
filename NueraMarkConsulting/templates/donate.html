@@ -1,0 +1,30 @@
+{%extends "layout.html"%}
+{%block content%}
+<style>
+    .headingtitle{
+        text-align: center;
+        padding-top: 20px;
+        font-style: italic;
+        font-weight: bold;
+        padding-bottom: 10px;
+        border-bottom: solid thin black;
+    }
+</style>
+<div class="container">
+    <div class="headingtitle">
+        <h1>Donate</h1>
+    </div>
+    {%if message%}
+        <div class="alert alert-success" role="alert">
+    {{message}}
+        </div>
+    {%endif%}
+    <form action="/donate" method="POST">
+        <input type="number" min="1" name="donation">
+        <button type="submit">
+            Submit
+        </button>
+    </form>
+</div>
+
+{%endblock content%}

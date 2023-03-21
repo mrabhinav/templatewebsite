@@ -1,0 +1,74 @@
+{%extends "layout.html"%}
+{%block content%}
+<style>
+    h1{
+        text-align: center;
+        padding-top: 20px;
+        font-style: italic;
+        font-weight: bold;
+        padding-bottom: 10px;
+        border-bottom: solid thin black;
+    }
+
+    .card{
+        text-align: center;
+        margin: 3%;
+        font-style: oblique;
+        background-color: #F8F9FA;
+        padding: 5%;
+    }
+
+    p{
+        font-size: 40px;
+    }
+
+    .card input{
+        padding: 15px;
+        width: 500px;
+        left: 5px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: thin solid black;
+        border-right: transparent;
+    }
+
+    .card button{
+        padding: 15px;
+        position: relative;
+        right: 5px;
+        bottom: 2px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border: thin solid black;
+        border-left: transparent;
+    }
+
+    .enteremailinput{
+        padding: 0%;
+    }
+
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+
+</style>
+
+<h1>Forgot Username?</h1>
+
+<div class="forgotusernamecard">
+    <div class="card">
+        <div class="card-body">
+            <p>Type in you email</p>
+            <form action="/forgotusername" method="POST">
+                <div class="enteremailinput">
+                    <input type="text" placeholder="Type in Email" name="usergivenemailforgot">
+                    <button class="btn btn-primary" type="submit">Send Email</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock content%}

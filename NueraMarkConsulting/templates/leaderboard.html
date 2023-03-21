@@ -1,0 +1,58 @@
+{%extends "layout.html"%}
+{%block content%}
+<div class="container">
+    <table class="table table-hover">
+        <tr class="table-info" style="border-bottom: black 3px solid;">
+            <td class="table-success">Rank</td>
+            <td class="table-success">Username</td>
+            <td class="table-success">Fullname</td>
+            <td class="table-success">Amount Donated</td>
+        </tr> 
+        <tr>
+            <td cols="4"><div>
+                <form action="/search" method="POST">
+                    <input type="text" placeholder="Search" name="searchbar">
+                </form>
+            </div></td>
+        </tr>
+        <div id="tophalf">
+            <tr class="btn-gradient">
+        {%for row in rows%}
+            {%if row[5] == 1 %}
+            <div class="row1">
+                <td>{{row[5]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[3]}} {{row[4]}}</td>
+                <td>{{row[2]}}</td>
+            </div>
+            </tr>
+            {%elif row[5] == 2 %}
+            <tr class="row2">
+                <td>{{row[5]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[3]}} {{row[4]}}</td>
+                <td>{{row[2]}}</td>
+            </tr>
+            {%elif row[5] == 3 %}
+            <tr class="row3">
+                <td>{{row[5]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[3]}} {{row[4]}}</td>
+                <td>{{row[2]}}</td>
+            </div>
+            </tr>
+        </div>
+            {%else%}
+            <tr>
+            <div id="bottomhalf">
+                <td class="table-light">{{row[5]}}</td>
+                <td class="table-light">{{row[1]}}</td>
+                <td class="table-light">{{row[3]}} {{row[4]}}</td>
+                <td class="table-light">{{row[2]}}</td>
+            </div>
+            {%endif%}
+            </tr>
+            {%endfor%}
+    </table>
+</div>
+{%endblock content%}

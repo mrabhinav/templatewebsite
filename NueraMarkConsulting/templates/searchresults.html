@@ -1,0 +1,57 @@
+{%extends "layout.html"%}
+{%block content%}
+
+<style>
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        height: 50vh;
+    }
+
+    .results{
+        border: solid black thin;
+    }
+    .results h1{
+        text-align: center;
+    }
+
+    .results h2{
+        text-align: center;
+        font-style: italic;
+        padding-bottom: 10px;
+        border-bottom: thin black solid;
+    }
+
+    .results h3{
+        padding: 10px;
+    }
+
+    .results button{
+        border-radius: 5px;
+        border: none;
+        background-color: gold;
+        padding: 10px;
+        margin-left: 27%;
+        width: 200px;
+    }
+
+    .results button:hover{
+        background-color: #eebc1d;
+    }
+</style>
+<div class="container">
+    {%for record in searchrecords%}
+    <div class="results">
+    <h1>{{record[1]}}</h1>
+    <h2>{{record[2]}}</h2>
+    <h3>From: {{record[3]}}</h3>
+    <h3>To: {{record[4]}}</h3>
+    <h3>Capacity: {{record[5]}}</h3>
+    <a href="/bookboat/{{record[0]}}"><button>Book Now!</button></a>
+    </div>
+    {%endfor%}
+</div>
+
+
+{%endblock content%}

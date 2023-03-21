@@ -1,0 +1,112 @@
+{%extends "layout.html"%}
+{%block content%}
+<style>
+  ::placeholder{
+      font-style: italic;
+    }
+
+    .accountloginheading h1{
+    text-align: center;
+    padding-top: 20px;
+    font-style: italic;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: solid thin black;
+    }
+
+    .username, .password {
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .forgot a{
+      padding-right: 10px;
+    }
+
+    .flashedmessage{
+      margin-right: 3%;
+      display:flex;
+      justify-content: space-between;
+    }
+
+    .flashedmessage li{
+      text-decoration: none;
+      list-style-type: none;
+    }
+
+    .close{
+      text-decoration: none;
+      font-size: 15px;
+      color: darkred;
+    }
+</style>
+
+{% with errors = get_flashed_messages(category_filter=["error"]) %}
+{% if errors %}
+<div class="alert-message block-message error">
+  <ul>
+    {%- for msg in errors %}
+    <div class="alert alert-danger flashedmessage" role="alert"><li>{{ msg }}</li>
+      <span><a class="close" href="/login">×</a></span></div>
+    {% endfor -%}
+  </ul>
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="container">
+  <div class="accountloginheading">
+  <h1>Log onto your account</h1>
+  </div>
+  <div class="alert alert-danger" role="alert">
+    {{message}}
+  </div>
+  <form class="row g-3 needs-validation" method="POST" action="/login" novalidate>
+      <div class="username">
+        <label for="validationCustomUsername" class="form-label">Username</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name = "username" required>
+        </div>
+      </div>
+        <div class="password">
+          <label for="validationCustomPassword" class="form-label">Password</label>
+          <div class="input-group has-validation">
+            <input type="password" class="form-control" id="validationCustomPassword" aria-describedby="inputGroupPrepend" name="password" required>
+          </div>
+        </div>
+      <div class="forgot">
+        <a href="">Forgot Username?</a>
+        <a href="">Forgot Password?</a>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Log In</button>
+      </div>
+    </form>
+</div>
+
+<script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+'use strict'
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.querySelectorAll('.needs-validation')
+
+// Loop over them and prevent submission
+Array.prototype.slice.call(forms)
+  .forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+
+</script>
+
+{%endblock content%}

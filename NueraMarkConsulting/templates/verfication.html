@@ -1,0 +1,67 @@
+{%extends "layout.html"%}
+{%block content%}
+<style>
+    .forgotpasswordtext a{
+        color: #1aa7ec;
+        font-style: normal;
+        padding-top: 10px;
+    }
+    .forgotpasswordtext a:hover{
+        color: #1aa7ec;
+        text-decoration: underline;
+    }
+
+    .createaccountmsg a{
+        color: #1aa7ec;
+        font-style: normal;
+        padding-top: 10px;
+    }
+    .createaccountmsg a:hover{
+        color: #1aa7ec;
+        text-decoration: underline;
+    }
+
+    .formbox{
+        margin-left: 30%;
+        margin-top: 8%;
+        margin-bottom: 8%;
+    }
+
+    .signinbutton button{
+        background-color: #1aa7eb;
+        border-color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 300px;
+        padding: 10px;
+        margin-left: 10%;
+    }
+
+    .signinbutton button:hover{
+        background-color:teal;
+        border-color: white;
+    }
+
+    .createaccountmsg{
+        margin-left: 11%;
+    }
+
+    h1{
+        margin-left: 10%;
+    }
+</style>
+<div class="container">
+    <div class="formbox">
+        <form action="/userverfication" method="POST">
+            <h1>Verfication Code</h1>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Verfication Code</label>
+                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 500px;" name = "uservcode">
+                <div id="emailHelp" class="form-text">Type the verfication code that was sent to your email.</div>
+            </div>
+            <div class="signinbutton"><button type="submit" class="btn btn-primary">Reset</button></div>
+           
+        </form>
+    </div>
+</div>
+{%endblock content%}

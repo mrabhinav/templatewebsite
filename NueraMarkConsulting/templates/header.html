@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/table.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <title>Header</title>
+    <style>
+
+        .navcontainer{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            background-color: lightgray;
+            padding-top: 10px;
+        }
+
+        .navlinks ul{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .navlinks a{
+            text-decoration: none; 
+            color: black;
+        }
+
+        .navlinks ul li{
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .navsearch ul{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .navsearch ul li{
+            margin-right: 20px;
+        }
+        .navlinks ul li {
+            list-style-type: none;
+            
+        }
+
+        .navsearch ul li{
+            list-style-type: none;
+        }
+
+        .navbrand{
+            width: 450px;
+        }
+        .navbrand img{
+            width: 100%;
+        }
+
+        *{
+            padding: 0%;
+            margin: 0%;
+        }
+
+        ul{
+            padding: 0%;
+        }
+
+        .submenu{
+            display: none;
+        }
+
+        .navpfp a:hover .submenu {
+            display:block;
+            border: solid thin black;
+        }
+    </style>
+</head>
+<body>
+    <div class="navcontainer">
+        <div class="navlinks">
+            <ul>
+                <li><a href="/"><div class="navbrand"><img src="../static/THH-TEXT.png" alt="logo"></div></a></li>
+                <li><a href="/">About Foundation</a></li>
+                <li><a href="/">Leaderboard</a></li>
+                <li><a style="color: green;" href="/">DONATION</a></li>
+            </ul>
+        </div>
+        <div class="navsearch">
+            <ul>
+                <li><input type="text" placeholder="search"></li>
+                <li>
+                    <div class="navpfp"><i class="fa fa-user-circle" style="font-size: 40px;"></i></a></span></div>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="/">Account</a></li>
+                            <li><a href="/">Logout</a></li>
+                            <li><a href="/">Login</a></li>
+                            <li><a href="/">Signup</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

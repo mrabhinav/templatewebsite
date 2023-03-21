@@ -1,0 +1,200 @@
+{%extends "layout.html"%}
+{%block content%}
+<style>
+    ::placeholder{
+        font-style: italic;
+    }
+
+    .accountcreationheading h1{
+    text-align: center;
+    padding-top: 20px;
+    font-style: italic;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: solid thin black;
+    }
+
+    /* body{
+      background-color: lightgreen;
+      background-image: url(../static/charity3.jpeg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: multiply;
+      color: white;
+    } */
+</style>
+<div class="container">
+    <div class="accountcreationheading">
+    <h1>Create an Account</h1>
+    </div>
+    <div class="alert alert-danger" role="alert">
+      {{message}}
+    </div>
+    <form class="row g-3 needs-validation" method="POST" action="/signup" novalidate>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">First name</label>
+          <input type="text" class="form-control" id="validationCustom01" placeholder="Mark" name="firstname" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a first name.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Last name</label>
+          <input type="text" class="form-control" id="validationCustom02" placeholder="Otto" name="lastname" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a last name.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name = "username" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">City</label>
+          <input type="text" class="form-control" id="validationCustom03" name = "city" required>
+          <div id="emailHelp" class="form-text">We'll never this with anyone else.</div>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">State</label>
+          <select class="form-select" id="validationCustom04" name = "state" required>
+            <option selected disabled value="Select your state"></option>
+            <option value="california">California</option>
+            <option value="utah">Utah</option>
+          </select>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please select a valid state.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Zip</label>
+          <input type="number" class="form-control" id="validationCustom05" name="zip" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid zip.
+          </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustomEmail" class="form-label">Email</label>
+            <div class="input-group has-validation">
+              <input type="email" class="form-control" id="validationCustomEmail" aria-describedby="inputGroupPrepend" name = "email" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid email address.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustomPassword" class="form-label">Password</label>
+            <div class="input-group has-validation">
+              <input type="password" class="form-control" id="validationCustomPassword" aria-describedby="inputGroupPrepend" name="password" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please create a password.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustomPassword" class="form-label">Confirm Password</label>
+            <div class="input-group has-validation">
+              <input type="password" class="form-control" id="validationCustomPassword" aria-describedby="inputGroupPrepend" name = "cpassword" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Password does not match.
+              </div>
+            </div>
+          </div>
+          <div>Gender</div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault1" value = "Male" name = "gender">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Male
+            </label>
+          </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio"  id="flexRadioDefault2" value = "Female" name = "gender">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Female
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault3" value = "Other" name = "gender">
+            <label class="form-check-label" for="flexRadioDefault3">
+              Other
+            </label>
+        </div>
+        <div class="loginpage">
+          <a href="/login"><p>Have an account already?</p></a>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+</div>
+
+<script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
+</script>
+
+{%endblock content%}

@@ -1,0 +1,58 @@
+{%extends "layout.html"%}
+{%block content%}
+<style>
+.accountheading h1{
+    text-align: center;
+    padding-top: 20px;
+    font-style: italic;
+    font-weight: bold;
+    padding-bottom: 10px;
+    }
+    .pfp img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 50%;
+        max-width: 100%;
+
+    }
+
+    .pfp{
+      width: 200px;
+      height: 200px;
+      margin-left: 42%;
+    }
+
+    .emailandpassword p{
+      padding-bottom: 5%;
+      border-bottom: thin black solid;
+      text-align: center;
+      text-align: center;
+      font-style: italic;
+      font-weight: bold;
+
+    }
+
+    .pasttickets h1{
+    text-align: center;
+    padding-top: 20px;
+    font-style: italic;
+    font-weight: bold;
+    padding-bottom: 10px;
+    }
+</style>
+<div class="container">
+    <div class="accountheading">
+      <h1>{{fullname}}</h1>
+    </div>
+    <div class="pfp">
+        <img src="../static/nopfp.png" alt="nopfp">
+    </div>
+    <div class="emailandpassword">
+      <p>{{email}}</p>
+    </div>
+    <div class="pasttickets">
+      <h1>Past Tickets</h1>
+    </div>
+</div>
+{%endblock content%}

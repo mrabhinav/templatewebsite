@@ -1,0 +1,63 @@
+{%extends "layout.html"%}
+{%block content%}
+<style>
+    .forgotpasswordtext a{
+        color: #1aa7ec;
+        font-style: normal;
+        padding-top: 10px;
+    }
+    .forgotpasswordtext a:hover{
+        color: #1aa7ec;
+        text-decoration: underline;
+    }
+
+    .createaccountmsg a{
+        color: #1aa7ec;
+        font-style: normal;
+        padding-top: 10px;
+    }
+    .createaccountmsg a:hover{
+        color: #1aa7ec;
+        text-decoration: underline;
+    }
+
+    .formbox{
+        margin-left: 30%;
+        margin-top: 8%;
+        margin-bottom: 8%;
+    }
+
+    .signinbutton button{
+        background-color: #1aa7eb;
+        border-color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 300px;
+        padding: 10px;
+        margin-left: 10%;
+    }
+
+    .signinbutton button:hover{
+        background-color:teal;
+        border-color: white;
+    }
+
+    .createaccountmsg{
+        margin-left: 11%;
+    }
+
+    h1{
+        margin-left: 7%;
+    }
+    p{
+        margin-left: -7%;
+    }
+</style>
+<div class="container">
+    <div class="formbox">
+            <h1>Booking Successful!</h1>
+            <p>Information about the boat was sent to email. Thank you for booking using our services</p>
+            <a href="/home"><div class="signinbutton"><button type="submit" class="btn btn-primary">Return to Home</button></div></a>
+    </div>
+</div>
+{%endblock content%}

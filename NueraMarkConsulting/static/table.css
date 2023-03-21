@@ -1,0 +1,154 @@
+
+  .btn-gradient {
+
+width: 200px;
+
+height: 40px;
+
+border: none;
+
+color: black;
+
+animation: c 53s linear infinite;
+
+background: linear-gradient(
+
+121.19deg,
+
+rgba(133, 239, 49, 0) 25.73%,
+
+hsla(0, 0%, 100%, 0.3) 45.27%,
+
+rgba(133, 239, 49, 0) 62.27% ), gold;
+
+transition: background-color 0.5s ease;
+
+}
+
+.btn-gradient:hover {
+
+animation: c 53s linear infinite;
+
+background: linear-gradient(
+
+121.19deg,
+
+rgba(133, 239, 49, 0) 25.73%,
+
+hsla(0, 0%, 100%, 0.3) 45.27%,
+
+rgba(133, 239, 49, 0) 62.27% ), #D8BB5D;
+
+}
+
+@keyframes c {
+
+0% {
+
+background-position: -5000px 0;
+
+}
+
+to {
+
+background-position: 5000px 0;
+
+}
+
+
+
+}
+
+.row2{
+
+        width: 200px;
+        
+        height: 40px;
+        
+        border: none;
+        
+        color: black;
+        
+        animation: c 53s linear infinite;
+        
+        background: linear-gradient(
+        
+        121.19deg,
+        
+        rgba(133, 239, 49, 0) 25.73%,
+        
+        hsla(0, 0%, 100%, 0.3) 45.27%,
+        
+        rgba(133, 239, 49, 0) 62.27% ), #C0C0C0;
+        
+        transition: background-color 0.5s ease;
+        
+
+}
+
+.row2:hover {
+
+        animation: c 53s linear infinite;
+        
+        background: linear-gradient(
+        
+        121.19deg,
+        
+        rgba(133, 239, 49, 0) 25.73%,
+        
+        hsla(0, 0%, 100%, 0.3) 45.27%,
+        
+        rgba(133, 239, 49, 0) 62.27% ), #B5B7BB;
+        
+}
+
+.row3{
+
+    width: 200px;
+    
+    height: 40px;
+    
+    border: none;
+    
+    color: black;
+    
+    animation: c 53s linear infinite;
+    
+    background: linear-gradient(
+    
+    121.19deg,
+    
+    rgba(133, 239, 49, 0) 25.73%,
+    
+    hsla(0, 0%, 100%, 0.3) 45.27%,
+    
+    rgba(133, 239, 49, 0) 62.27% ), #CD7F32;
+    
+    transition: background-color 0.5s ease;
+    
+
+}
+
+.row3:hover {
+
+    animation: c 53s linear infinite;
+    
+    background: linear-gradient(
+    
+    121.19deg,
+    
+    rgba(133, 239, 49, 0) 25.73%,
+    
+    hsla(0, 0%, 100%, 0.3) 45.27%,
+    
+    rgba(133, 239, 49, 0) 62.27% ), #B08D57;
+    
+}
+
+tr{
+    border: none;
+}
+
+#bottomhalf{
+    border-bottom: 1px solid black;
+}

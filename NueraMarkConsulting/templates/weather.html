@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style>
+        .weatherwidget{
+            background-color: skyblue;
+            max-width: 400px;
+            max-height: 400px;
+            padding: 10px;
+        }
+
+        .weatherwidget ul li{
+            list-style-type: none;
+
+        }
+
+        .weatherwidget h1{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+        }
+
+        h3{
+            font-size: 40px;
+        }
+
+        .hot{
+            color: darkred;
+        }
+
+        .cold{
+            color: darkblue;
+        }
+
+        .topsection{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .line{
+            font-size: 40px;
+        }
+        .description p{
+            text-transform: capitalize;
+        }
+
+        .bottomsection{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>What city do you want to check the weather for?</h1>
+    <form action="/weather" method="POST">
+        <input type="text" placeholder="city" name="cityasked">
+    </form>
+
+    {{output}}
+
+    <div class="weatherwidget">
+        
+        <h1>Weather for {{temp_data[0]}}</h1>
+        <div class="topsection">
+            {%if temp_data[3] >= 50%}
+                <h3 class="hot">{{temp_data[3]}}<sup>o</sup>F</h3> 
+                <div class="line">
+                    |
+                </div>
+                <img src={{icon}} alt="icon">
+            {%else%}
+                <h3 class="cold">{{temp_data[3]}}<sup>o</sup>F</h3> 
+                <div class="line">
+                     |
+                </div>
+                <img src={{icon}} alt="icon">
+            {%endif%}
+        </div>
+        <div class="bottomsection">
+            <ul>
+        
+                <li>High: {{temp_data[2]}}<sup>o</sup>F</li>
+                <li>Low: {{temp_data[1]}}<sup>o</sup>F</li>
+    
+            </ul>
+            <div class="line">
+                |
+           </div>
+            <div class="description">
+                <p>{{temp_data[4]}}</p>
+            </div>
+        </div>
+    
+        </div>
+        
+</body>
+</html>
